@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="478.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ViewController">
+   <children>
+      <Button fx:id="id_button" layoutX="26.0" layoutY="307.0" mnemonicParsing="false" onAction="#ajouter_proj" text="ajouter" />
+      <TextField fx:id="nom" layoutX="104.0" layoutY="76.0" prefHeight="25.0" prefWidth="114.0" />
+      <TextField fx:id="genre" layoutX="104.0" layoutY="132.0" prefHeight="25.0" prefWidth="114.0" />
+      <TextField fx:id="age" layoutX="104.0" layoutY="188.0" prefHeight="25.0" prefWidth="114.0" />
+      <TextField fx:id="duree" layoutX="105.0" layoutY="246.0" prefHeight="25.0" prefWidth="114.0" />
+      <Label layoutX="28.0" layoutY="80.0" text="nom" />
+      <Label layoutX="23.0" layoutY="136.0" text="genre" />
+      <Label layoutX="5.0" layoutY="191.0" text="age_recommande" />
+      <Label layoutX="23.0" layoutY="250.0" text="durée" />
+      <TableView fx:id="tb_projection" layoutX="252.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="357.0">
+         <columns>
+            <TableColumn fx:id="tb_nom" prefWidth="87.0" text="nom" />
+            <TableColumn fx:id="tb_genre" prefWidth="87.0" text="genre" />
+            <TableColumn fx:id="tb_age" prefWidth="55.0" text="age_recommander" />
+            <TableColumn fx:id="tb_duree" prefWidth="102.0" text="durée" />
+         </columns>
+      </TableView>
+      <TextField fx:id="id_supp" layoutX="282.0" layoutY="27.0" />
+      <Button fx:id="supp" layoutX="173.0" layoutY="307.0" mnemonicParsing="false" onAction="#supp_projection" text="supprimer" />
+      <Button fx:id="modifier" layoutX="100.0" layoutY="307.0" mnemonicParsing="false" onAction="#modifier_projct" text="modifier" />
+      <Button fx:id="r_id" layoutX="466.0" layoutY="27.0" mnemonicParsing="false" onAction="#rech_projection" text="rechercher" />
+      <TextField fx:id="mail" layoutX="87.0" layoutY="372.0" />
+      <Button fx:id="eemail" layoutX="67.0" layoutY="419.0" mnemonicParsing="false" onAction="#envoyer_email" text="envoyer" />
+      <Label layoutX="25.0" layoutY="376.0" text="email" />
+      <Button layoutX="558.0" layoutY="27.0" mnemonicParsing="false" onAction="#trier_projection" text="trier" />
+   </children>
+</AnchorPane>
