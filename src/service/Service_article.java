@@ -39,7 +39,7 @@ public class Service_article {
       public ResultSet getall_article() {
          
         try {
-            PreparedStatement req = c.prepareStatement("SELECT titre FROM article");
+            PreparedStatement req = c.prepareStatement("SELECT * FROM article");
             ResultSet rs = req.executeQuery();
             return rs;
         } catch (SQLException ex) {
@@ -60,7 +60,7 @@ ok=true;
         }
         return ok;
     }
-    public void modifier_projection(article a ,String titre) {
+    public void modifier_article(article a ,String titre) {
         try {
             PreparedStatement req = c.prepareStatement("update article set titre=?,description=?,nom_film=? where titre=?");
             

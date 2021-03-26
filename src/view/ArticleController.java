@@ -27,6 +27,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import service.Service_article;
@@ -44,11 +45,21 @@ public class ArticleController implements Initializable {
     @FXML
     private TextField titre;
     @FXML
-    private TextField description;
-    @FXML
     private Button ajout_article;
     @FXML
     private ListView<String> liste_article;
+    @FXML
+    private Button modifier;
+    @FXML
+    private Button supprimer;
+    @FXML
+    private TextField titre_supp;
+    @FXML
+    private TextArea text_ds;
+    @FXML
+    private Button rechercher;
+    @FXML
+    private Button trier;
 
     /**
      * Initializes the controller class.
@@ -91,7 +102,7 @@ public class ArticleController implements Initializable {
         //p.setId(Integer.parseInt(id.getText()) );
        
         a.setTitre(titre.getText());
-        a.setDescription(description.getText());
+        a.setDescription(text_ds.getText());
         a.setNom_film(box.getValue());
        as.ajouter_article(a);
        System.out.println("article ajouter avec succé");
@@ -133,9 +144,9 @@ public class ArticleController implements Initializable {
         ObservableList<String> list= FXCollections.observableArrayList();
        try {
            
-            String consulta = "select * from article";
+            String req = "select * from article";
          Connection c = connexion.getinstance().getConn();
-            PreparedStatement ps =c.prepareStatement(consulta);
+            PreparedStatement ps =c.prepareStatement(req);
               ResultSet rs = ps.executeQuery();
                
               while ( rs.next() ) 
@@ -153,6 +164,85 @@ public class ArticleController implements Initializable {
         }
         
         
+    }
+
+    @FXML
+    private void modifier_article(ActionEvent event) {
+         Service_article as= new Service_article();
+        article a =new article();
+        a.setTitre(titre.getText());
+        a.setDescription(text_ds.getText());
+        a.setNom_film(box.getValue());
+     
+       as.modifier_article(a, (titre.getText() ));
+       System.out.println("article modifier avec succé");
+       test();
+    }
+
+    @FXML
+    private void supprimer_article(ActionEvent event) {
+        Service_article as= new Service_article();
+        article a =new article();
+        a.setTitre((titre_supp.getText()) );
+        as.supprimer_article(a);
+        System.out.println("article supprimer avec succé");
+        test();
+    }
+
+    @FXML
+    private void rechercher(ActionEvent event) {
+        String titre=titre_supp.getText();
+        ObservableList<String> list= FXCollections.observableArrayList();
+       try {
+           
+            String req = "select * from article where titre=?";
+         Connection c = connexion.getinstance().getConn();
+            PreparedStatement ps =c.prepareStatement(req);
+            ps.setString(1, titre);
+              ResultSet rs = ps.executeQuery();
+               
+              while ( rs.next() ) 
+             {  
+               list.add(rs.getString("titre"));
+               list.add(rs.getString("description"));
+               list.add(rs.getString("nom_film"));
+                 
+               
+             }
+               
+           liste_article.setItems(list);
+            
+        } catch (SQLException e) {
+        }
+        
+        
+    }
+
+    @FXML
+    private void trier(ActionEvent event) {
+        
+        ObservableList<String> list= FXCollections.observableArrayList();
+       try {
+           
+            String req = "select * from article ORDER BY  titre";
+         Connection c = connexion.getinstance().getConn();
+            PreparedStatement ps =c.prepareStatement(req);
+           
+              ResultSet rs = ps.executeQuery();
+               
+              while ( rs.next() ) 
+             {  
+               list.add(rs.getString("titre"));
+               list.add(rs.getString("description"));
+               list.add(rs.getString("nom_film"));
+                 
+               
+             }
+               
+           liste_article.setItems(list);
+            
+        } catch (SQLException e) {
+        }
     }
             
             
