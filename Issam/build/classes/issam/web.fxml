@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="1515.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="issam.WebController">
+   <children>
+      <BorderPane prefHeight="604.0" prefWidth="836.0">
+         <top>
+            <AnchorPane prefHeight="44.0" prefWidth="836.0" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="757.0">
+         <children>
+            <BorderPane prefHeight="589.0" prefWidth="757.0">
+               <top>
+                  <AnchorPane prefHeight="58.0" prefWidth="758.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXButton prefHeight="42.0" prefWidth="42.0" text="Button">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="BARS" />
+                           </graphic>
+                        </JFXButton>
+                        <FontAwesomeIcon glyphName="BARS" layoutX="350.0" layoutY="33.0" text="M  E N U" wrappingWidth="64.68576908111572" />
+                        <FontAwesomeIcon glyphName="BARS" layoutX="600.0" layoutY="33.0" text="Y O U T U B E " wrappingWidth="102.28580570220947" />
+                        <FontAwesomeIcon glyphName="BARS" layoutX="900.0" layoutY="34.0" text="G O O G L E" wrappingWidth="84.68576908111572" />
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #BDBDBD;" BorderPane.alignment="CENTER">
+                     <children>
+                        <WebView fx:id="viewweb" layoutY="123.0" prefHeight="522.0" prefWidth="1497.0" />
+                        <AnchorPane prefHeight="94.0" prefWidth="758.0">
+                           <children>
+                              <JFXButton layoutX="436.0" layoutY="25.0" onAction="#youtube" prefHeight="44.0" prefWidth="146.0" style="-fx-background-color: #C62828;" text="Y O U T U B E" textFill="#fafafa" />
+                           </children>
+                        </AnchorPane>
+                        <MenuBar layoutY="97.0" prefHeight="26.0" prefWidth="1498.0">
+                           <menus>
+                              <Menu mnemonicParsing="false" text="File">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Close" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Edit">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Delete" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Help">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="About" />
+                                 </items>
+                              </Menu>
+                           </menus>
+                        </MenuBar>
+                        <JFXButton layoutX="848.0" layoutY="26.0" onAction="#googlemeet" prefHeight="42.0" prefWidth="169.0" style="-fx-background-color: #00796B;" text="G O O G L E  M E E T" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

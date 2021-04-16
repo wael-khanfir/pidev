@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="issam.InviteController">
+   <AnchorPane id="AnchorPane" layoutY="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="189.0" fitWidth="553.0" layoutX="147.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="365.0">
+         <Image url="@../images/3774598ecdacdf8b15f8b48c1cf876d8-3.jpg" />
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutX="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="553.0" spacing="25.0" style="-fx-background-color: lightblue" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets top="60.0" />
+         </padding>
+         <HBox spacing="15.0">
+            <children>
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="First name">
+                  <font>
+                     <Font name="System Bold Italic" size="14.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="nom_invit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" promptText="Nom Invite" />
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Last name">
+                  <font>
+                     <Font name="System Bold Italic" size="14.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="prenom_invit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" promptText="Prenom Invite" />
+            </children>
+            <padding>
+               <Insets left="25.0" />
+            </padding>
+         </HBox>
+         <HBox spacing="15.0">
+            <children>
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" text="Email">
+                  <font>
+                     <Font name="System Bold Italic" size="14.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="emailField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Email" />
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Career">
+                  <font>
+                     <Font name="System Bold Italic" size="14.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="carriere" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" promptText="Carriere" />
+            </children>
+            <padding>
+               <Insets left="25.0" />
+            </padding>
+         </HBox>
+         <HBox spacing="15.0">
+            <children>
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="Interview type">
+                  <font>
+                     <Font name="System Bold Italic" size="14.0" />
+                  </font>
+               </Label>
+               <ComboBox fx:id="interviewTypeCB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
+                  <items>
+                     <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Live" />
+                        <String fx:value="Meet" />
+                     </FXCollections>
+                  </items>
+               </ComboBox>
+            </children>
+            <padding>
+               <Insets left="25.0" />
+            </padding>
+         </HBox>
+         <HBox spacing="15.0">
+            <children>
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="Interview Date">
+                  <font>
+                     <Font name="System Bold Italic" size="14.0" />
+                  </font>
+               </Label>
+               <DatePicker fx:id="date" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Date of interview" />
+            </children>
+            <padding>
+               <Insets left="25.0" />
+            </padding>
+         </HBox>
+      </VBox>
+      <HBox layoutX="437.0" layoutY="501.0" spacing="15.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <Button fx:id="save" mnemonicParsing="false" onAction="#valider" prefHeight="25.0" prefWidth="71.0" text="Save" />
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="545.0" prefWidth="150.0" spacing="25.0" style="-fx-background-color: #48A5EA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+         <Button fx:id="back" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="71.0" text="Back" />
+         <ImageView fitHeight="104.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@/images/83781576_485600718733499_7302064549232902144_n.png" />
+         </ImageView>
+      </VBox>
+   </AnchorPane>
+</AnchorPane>
